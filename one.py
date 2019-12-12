@@ -31,7 +31,7 @@ def wechat():
     # 排序
     li.sort()
     # 拼接字符串
-    tmp_str = "".join(i)
+    tmp_str = "".join(li)
     # 进行sha1加密，得到签名值
     import hashlib
     sign = hashlib.sha1(tmp_str).hexdigest()
