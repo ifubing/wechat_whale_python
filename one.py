@@ -34,7 +34,7 @@ def wechat():
     tmp_str = "".join(li)
     # 进行sha1加密，得到签名值
     import hashlib
-    sign = hashlib.sha1(tmp_str).hexdigest()
+    sign = hashlib.sha1(tmp_str.encode()).hexdigest()
     # 将得到的签名值与请求的参数对比
     if signature != sign:
         flask.abort(403)
