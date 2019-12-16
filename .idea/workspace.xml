@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="81d9da86-b38b-45c6-821c-f718a73fa71b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/one.py" beforeDir="false" afterPath="$PROJECT_DIR$/one.py" afterDir="false" />
-    </list>
+    <list default="true" id="81d9da86-b38b-45c6-821c-f718a73fa71b" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +88,7 @@
       <workItem from="1576215479279" duration="1202000" />
       <workItem from="1576242218299" duration="1394000" />
       <workItem from="1576322489072" duration="595000" />
-      <workItem from="1576455389115" duration="6922000" />
+      <workItem from="1576455389115" duration="7225000" />
     </task>
     <servers />
   </component>

@@ -22,7 +22,7 @@ def wechat():
     signature = flask.request.args.get("signature")
     timestamp = flask.request.args.get("timestamp")
     nonce = flask.request.args.get("nonce")
-    # echostr = flask.request.args.get("echostr")
+    echostr = flask.request.args.get("echostr")
 
     # 校验参数
     if not all([signature, timestamp, nonce, echostr]):
@@ -42,7 +42,7 @@ def wechat():
     else:
         # 如果是验证身份
         if flask.request.method == 'GET':
-            echostr = flask.request.args.get("echostr")
+            # echostr = flask.request.args.get("echostr")
             return echostr
         # 如果是发送消息
         elif flask.request.method == 'POST':
