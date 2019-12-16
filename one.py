@@ -76,7 +76,6 @@ def wechat():
 
 
 
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
-    # app.run(host='192.168.2.118', port=80)
-    # manager.run()
