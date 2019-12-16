@@ -46,6 +46,7 @@ def wechat():
             return echostr
         # 如果是发送消息
         elif flask.request.method == 'POST':
+            print('进入post请求')
             xml_str = flask.request.data
             import xmltodict
             xml_dict = xmltodict.parse(xml_str)
@@ -53,7 +54,7 @@ def wechat():
 
             # 提取类型与内容
             msg_type = xml_dict.get('MsgType')
-
+            print('请求类型为', msg_type)
             import time
             # 类型判断
             if msg_type == 'text':
@@ -69,6 +70,7 @@ def wechat():
                 }
                 # 字典转 xml
                 resp_xml_str = xmltodict.unparse(resp_dict)
+                print('返回内容为',resp_xml_str)
                 return resp_xml_str
 
 
