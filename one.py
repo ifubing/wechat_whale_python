@@ -14,7 +14,7 @@ def index():
     return '微信公众号测试主页'
 
 
-@app.route('/wechat')
+@app.route('/wechat',methods=['GET','POST'])
 def wechat():
     """对接微信公众号服务器"""
     print('in wechat')
