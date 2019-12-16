@@ -14,6 +14,12 @@ def index():
     return '微信公众号测试主页'
 
 
+import random
+def get_weather():
+    weahter_list = ['晴天','雨天','阴天','晴转多云']
+    return random.choice(weahter_list)
+
+
 @app.route('/wechat',methods=['GET','POST'])
 def wechat():
     """对接微信公众号服务器"""
@@ -56,9 +62,15 @@ def wechat():
             # 提取类型与内容
             msg_type = xml_dict.get('MsgType')
             print('请求类型为', msg_type)
+
             import time
             # 类型判断
             if msg_type == 'text':
+
+                if xml_dict.get('Content') == '天气':
+                    content = get_weather()
+                else:
+                    content = '不存在的服务'
                 # 构建返回的字典
                 resp_dict = {
                     'xml': {
@@ -66,9 +78,12 @@ def wechat():
                         'FromUserName': xml_dict.get('ToUserName'),
                         'CreateTime': int(time.time()),
                         'MsgType': 'text',
-                        'Content': xml_dict.get('Content')
+                        # 'Content': xml_dict.get('Content')
+                        'Content': content
                     }
                 }
+
+
                 # 字典转 xml
                 resp_xml_str = xmltodict.unparse(resp_dict)
                 print('返回内容为',resp_xml_str)
